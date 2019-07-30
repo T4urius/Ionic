@@ -11,9 +11,9 @@ import { LoadingController, NavController } from '@ionic/angular';
 export class TodoDetailsPage implements OnInit {
 
   todo: Todo = {
-    task: 'Test',
-    createdAt: new Date().getDate(),
-    priority: 2
+    dataPagamento: 0,
+    valorConta: 0.0,
+    conta: ''
   }
   
   todoId = null;

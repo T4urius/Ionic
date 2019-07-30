@@ -4,9 +4,9 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 export interface Todo {
-  task: string;
-  priority: number;
-  createdAt: number;
+  dataPagamento: number;
+  valorConta: number;
+  conta: string;
 }
 
 @Injectable({

@@ -10,11 +10,19 @@
 <ion-content padding>
   <ion-list lines="full">
     <ion-item>
-      <ion-input required type="text" placeholder="Task" [(ngModel)]="todo.task"></ion-input>
+      <ion-label>
+        Dia:
+      </ion-label>
+      <ion-datetime displayFormat="DD" placeholder="Selecione a data de pagamento"> </ion-datetime>
     </ion-item>
     <ion-item>
-        <ion-input required type="number" placeholder="Priority" [(ngModel)]="todo.priority"></ion-input>
-    </ion-item>
+      <ion-label>Valor:</ion-label>
+        <ion-input type="number" placeholder="10,00" [(ngModel)]="todo.valorConta"></ion-input>  
+    </ion-item> 
+    <ion-item>
+      <ion-label>Conta:</ion-label>
+        <ion-input placeholder="Boleto NuBank" [(ngModel)]="todo.conta"></ion-input>  
+    </ion-item>  
   </ion-list>
   <ion-button expand="full" (click)="saveTodo()">Save</ion-button>
 </ion-content>
