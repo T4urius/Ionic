@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/home"></ion-back-button>
     </ion-buttons>
-    <ion-title>Details</ion-title>
+    <ion-title>Inserir conta</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -13,7 +13,7 @@
       <ion-label>
         Dia:
       </ion-label>
-      <ion-datetime displayFormat="DD" placeholder="Selecione a data de pagamento"> </ion-datetime>
+      <ion-datetime displayFormat="DD" placeholder="Selecione a data de pagamento" [(ngModel)]="todo.dataPagamento"></ion-datetime>
     </ion-item>
     <ion-item>
       <ion-label>Valor:</ion-label>
@@ -24,5 +24,5 @@
         <ion-input placeholder="Boleto NuBank" [(ngModel)]="todo.conta"></ion-input>  
     </ion-item>  
   </ion-list>
-  <ion-button expand="full" (click)="saveTodo()">Save</ion-button>
+  <ion-button expand="full" (click)="saveTodo()">Registrar conta</ion-button>
 </ion-content>

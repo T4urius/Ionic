@@ -1,14 +1,13 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title>
-      Ionic FireStore
+      Minhas contas
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-
     <ng-container *ngIf="!todos ||  todos.length == 0">
       <div *ngFor="let n of [0,1,2]" padding>
         <ion-skeleton-text></ion-skeleton-text>
@@ -22,24 +21,30 @@
       <ion-item lines="inset" button [routerLink]="['/details', item.id]">
         <ion-label>
           {{item.conta}}
-          <p> Data de pagamento: todo o dia {{item.dataPagamento | date:'dd'}} do mês.</p>
+          <p><ion-badge color="danger">R$ {{item.valorConta}}</ion-badge></p>          
         </ion-label>
-        <ion-note slot="end" color="primary">R$ {{item.valorConta}}</ion-note>
-      </ion-item>
-
+        <ion-note slot="end" color="primary">Dia do pagamento: {{item.dataPagamento | date:'dd'}}</ion-note>
+      </ion-item>      
       <ion-item-options side="end">
         <ion-item-option (click)="remove(item)" color="secondary">
           Remove Item
           <ion-icon name="checkmark" slot="end"></ion-icon>
         </ion-item-option>
       </ion-item-options>
-    </ion-item-sliding>
-  </ion-list>
+    </ion-item-sliding>       
+  </ion-list> 
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button routerLink="/details" routerDirection="forward">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
+
+  <ion-item>
+      <ion-label>Total a ser pago: </ion-label>
+      <ion-badge slot="end" color="danger">
+        R$ {{total}}
+      </ion-badge>
+  </ion-item>
 
 </ion-content>

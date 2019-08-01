@@ -16,6 +16,7 @@ export class TodoService {
 
   private todosCollection: AngularFirestoreCollection<Todo>;
   private todos: Observable<Todo[]>;
+  private total: number;
 
   constructor(db: AngularFirestore) {
     this.todosCollection = db.collection<Todo>('todos');

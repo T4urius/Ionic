@@ -11,12 +11,12 @@ import { LoadingController, NavController } from '@ionic/angular';
 export class TodoDetailsPage implements OnInit {
 
   todo: Todo = {
-    dataPagamento: 0,
+    dataPagamento: 1,
     valorConta: 0.0,
-    conta: ''
+    conta: '',
   }
   
-  todoId = null;
+  private todoId = null;
 
   constructor(private todoService: TodoService, private router: ActivatedRoute, 
     private loadingController: LoadingController, private nav: NavController) { }
@@ -30,7 +30,7 @@ export class TodoDetailsPage implements OnInit {
 
   async loadTodo() {
     const loading = await this.loadingController.create({
-      message: 'Saving Todo..'
+      message: 'Carregando sua conta..'
     });
     await loading.present();
 
@@ -42,7 +42,7 @@ export class TodoDetailsPage implements OnInit {
 
   async saveTodo() {
     const loading = await this.loadingController.create({
-      message: 'Saving Todo..'
+      message: 'Salvando sua conta..'
     });
     await loading.present();
 
@@ -58,5 +58,4 @@ export class TodoDetailsPage implements OnInit {
       });
     }
   }
-
 }
